@@ -1,7 +1,16 @@
 ﻿@{
+    var timestamp = DateTime.Now.ToString();
+    var valueNeedEncoded = @"""a"" < ""b""";
     ViewData["Title"] = "About";
 }
 <h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
 
-<p>Use this area to provide additional information.</p>
+
+<p>The current time is @timestamp, but cannot use newValue before it is declared. </p>
+
+<p>Invalid characters are auto encoded: @valueNeedEncoded</p>
+
+@{
+    var newValue = 365; //cannot use this before it's declared.
+} 
