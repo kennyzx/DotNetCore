@@ -12,13 +12,19 @@ namespace ASPNETCoreMVC
 {
     public class Program
     {
+        public static IConfiguration Configuration { get; set; }
+
         public static void Main(string[] args)
         {
+            var builder = new ConfigurationBuilder();
+            builder.AddCommandLine(args);
+            Configuration = builder.Build();
             BuildWebHost(args).Run();
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseEnvironment(Configuration.GetValue<string>("ASPNETCORE_ENVIRONMENT"))
                 .UseStartup<Startup>()
                 .Build();
     }
