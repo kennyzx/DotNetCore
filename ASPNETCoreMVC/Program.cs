@@ -22,6 +22,7 @@ namespace ASPNETCoreMVC
             BuildWebHost(args).Run();
         }
 
+        //Command line:  dotnet run --ASPNETCORE_ENVIRONMENT=Development -p ASPNETCoreMVC/ASPNETCoreMVC.csproj
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseEnvironment(Configuration.GetValue<string>("ASPNETCORE_ENVIRONMENT"))
