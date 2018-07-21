@@ -12,7 +12,8 @@ namespace ASPNETCoreMVC.Controllers
     {
         public IActionResult Index()
         {
-            ViewData["Message"] = "This is for testing purposes only.";
+            ViewData["Message"] = "This is for testing purposes only. ViewData[\"Message\"]";
+            ViewBag.Header = "This is a header. ViewBag.Header";
             return View();
         }
     }
