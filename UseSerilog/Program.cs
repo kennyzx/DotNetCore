@@ -1,5 +1,6 @@
 ﻿using System;
 using Serilog;
+using Microsoft.Extensions.Configuration;
 
 namespace UseSerilog
 {
@@ -8,10 +9,15 @@ namespace UseSerilog
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-	    var log = new LoggerConfiguration()
-    		.WriteTo.Console()
-	        .CreateLogger();
-            log.Information("Hello, Serilog!");
+	    var configuration = new ConfigurationBuilder()
+            .AddJsonFile("appsettings.json")
+            .Build();
+
+	    var logger = new LoggerConfiguration()
+            .ReadFrom.Configuration(configuration) // the error happens here
+            .CreateLogger();
+
+            logger.Information("Hello, Serilog!");
         }
     }
 }
