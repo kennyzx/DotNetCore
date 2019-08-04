@@ -1,0 +1,4 @@
+"devDependencies": {
+    "gulp": "3.9.0",
+    "del": "2.2.0"
+}
