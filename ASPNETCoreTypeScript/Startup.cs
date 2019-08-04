@@ -23,7 +23,7 @@ namespace ASPNETCoreTypeScript
             app.UseDefaultFiles();
             app.UseStaticFiles();
 
-            /*if (env.IsDevelopment())
+            if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
@@ -31,7 +31,7 @@ namespace ASPNETCoreTypeScript
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");
-            });*/
+            });
         }
     }
 }
