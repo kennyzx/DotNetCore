@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json;
 
 namespace UseMicrosoftExtensionsLogging
 {
@@ -6,7 +7,8 @@ namespace UseMicrosoftExtensionsLogging
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            PersonModel person = new PersonModel { Name = "abc", Age = 123};
+            Console.WriteLine($"Hello {JsonConvert.SerializeObject(person)}!");
         }
     }
 }
