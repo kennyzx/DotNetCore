@@ -1,0 +1,5 @@
+to build 
+$ sudo docker build -t dockerdnc .  //dockerdnc is a name I picked
+to run
+$ sudo docker run -d -p 8080:80 --name myapp dockerdnc //myapp is another name I picked
+
